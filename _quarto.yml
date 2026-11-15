@@ -7,6 +7,16 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: projects.qmd
+        text: Projects
+      - href: about.qmd
+        text: About
+      - href: resume.qmd
+        text: Resume
+      - href: contact.qmd
+        text: Contact
+      - href: index.qmd
+        text: Home
       - about.qmd
 
 format:
