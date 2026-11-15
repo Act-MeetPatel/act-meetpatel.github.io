@@ -89,5 +89,47 @@
     "title": "Life Insurance Pricing Model",
     "section": "What I learned",
     "text": "What I learned\n\nA model can run without errors and still be wrong. Reconciling two independent calculations, the premium solve and the cash flow projection, caught a discounting mistake that neither would have shown alone.\nPrice once, test many times. Re-solving the premium under each stress answers the wrong question, because sensitivity testing should hold the premium fixed.\nStress tests need checking too. My first mortality stress changed nothing, because the stressed table never reached the calculations. Checking each function in the chain in turn found the gap.\nA Shiny interface can sit on top of a verified engine without changing its logic.\n\nView on GitHub"
+  },
+  {
+    "objectID": "projects/options-pricing-engine.html",
+    "href": "projects/options-pricing-engine.html",
+    "title": "Options Pricing Engine",
+    "section": "",
+    "text": "A segregated fund guarantee promises the policyholder at least their money back at maturity. That makes it a put option the insurer has sold. This project builds an option pricing engine in R to price that promise. It prices options three independent ways, a binomial tree, the Black-Scholes formula and Monte Carlo simulation, and checks them against each other. It then tests the models on real Tesla option data and applies them to the guarantee: its price, the fair fee, a delta hedge and a tail reserve.\nThe project ends in a three-tab Shiny app and a written report."
+  },
+  {
+    "objectID": "projects/options-pricing-engine.html#overview",
+    "href": "projects/options-pricing-engine.html#overview",
+    "title": "Options Pricing Engine",
+    "section": "",
+    "text": "A segregated fund guarantee promises the policyholder at least their money back at maturity. That makes it a put option the insurer has sold. This project builds an option pricing engine in R to price that promise. It prices options three independent ways, a binomial tree, the Black-Scholes formula and Monte Carlo simulation, and checks them against each other. It then tests the models on real Tesla option data and applies them to the guarantee: its price, the fair fee, a delta hedge and a tail reserve.\nThe project ends in a three-tab Shiny app and a written report."
+  },
+  {
+    "objectID": "projects/options-pricing-engine.html#tools-used",
+    "href": "projects/options-pricing-engine.html#tools-used",
+    "title": "Options Pricing Engine",
+    "section": "Tools used",
+    "text": "Tools used\n\nR for the pricing functions, simulations, hedging and charts, with quantmod for market data\nShiny for a three-tab app covering pricing, market data and the seg fund guarantee\nQuarto for the written report\nGit and GitHub for version control"
+  },
+  {
+    "objectID": "projects/options-pricing-engine.html#key-results",
+    "href": "projects/options-pricing-engine.html#key-results",
+    "title": "Options Pricing Engine",
+    "section": "Key results",
+    "text": "Key results\n\nThree methods that check each other\nThe tree handles American options, the formula is exact for European ones and gives the Greeks, and simulation handles products that depend on the path, such as Asian and barrier options. For the same European call (stock 100, strike 100, rate 5%, dividend yield 2%, volatility 20%, one year), they agree closely.\n\n\n\nMethod\nEuropean call price\n\n\n\n\nBinomial tree, 500 steps\n9.2231\n\n\nBlack-Scholes formula\n9.2270\n\n\nMonte Carlo, control variate\n9.2553 (standard error 0.018)\n\n\n\nPut-call parity held to rounding error, and every Greek matched a direct nudge calculation. A control variate cut the simulation error by about 59% compared with plain Monte Carlo.\n\n\nReal Tesla data shows what one volatility cannot capture\nI tested the models on Tesla options expiring in January 2027, saved on 2 November 2026. Most quotes were unusable, and put-call parity showed that the downloaded stock price did not match the price the options were quoted at. Implied volatility near the money was about 44%, against historical volatility of 36% (30 days), 51% (90 days) and 45% (about a year). It also formed a smile, from about 55% at the lowest strikes to about 42% at the highest. A single constant volatility cannot match that.\n\n\n\nImplied volatility smile for Tesla options expiring 15 January 2027\n\n\n\n\nPricing the segregated fund guarantee\nThe guarantee pays the shortfall between the fund and the guaranteed 100 at maturity. For a 10-year policy, with a 3.8% interest rate and 20% volatility, the results per 100 invested are below.\n\n\n\nResult\nWithout mortality and lapses\nWith mortality and lapses\n\n\n\n\nCost of the guarantee\n13.77\n8.08\n\n\nCTE95 reserve per 100 sold\n38.6\n21.6\n\n\n\nThe fair yearly fee for the guarantee alone is about 0.79%. A weekly delta hedge removed about 95% of the risk, and the hedge error shrinks as rebalancing becomes more frequent. The reserve is far above the price because they answer different questions: the price is a risk-neutral value, and the reserve is capital for a bad market.\n\n\n\nHedge error at year 10 for monthly, weekly and daily rebalancing"
+  },
+  {
+    "objectID": "projects/options-pricing-engine.html#limitations-and-assumptions",
+    "href": "projects/options-pricing-engine.html#limitations-and-assumptions",
+    "title": "Options Pricing Engine",
+    "section": "Limitations and assumptions",
+    "text": "Limitations and assumptions\n\nMost seg fund inputs are assumptions, not data: volatility, expected return and lapse rate. The results move a lot with them. One point of interest rate moves the cost of the guarantee by about 25% to 30%.\nBlack-Scholes is a formula for European options, and Tesla’s options are American. I did not measure the difference.\nVolatility is a single constant in the models, while real options show a smile.\nIn the seg fund model, lapses are independent of the market and the pool of policies is large. Both are assumptions, and both probably understate the cost.\nThe CTE reserve illustrates a tail measure. It is not the regulatory formula.\nMarket data comes from Yahoo Finance and can lag by a day. The Shiny app runs locally in RStudio and is not published online."
+  },
+  {
+    "objectID": "projects/options-pricing-engine.html#what-i-learned",
+    "href": "projects/options-pricing-engine.html#what-i-learned",
+    "title": "Options Pricing Engine",
+    "section": "What I learned",
+    "text": "What I learned\n\nPassing tests can still hide bugs. An Asian option with one monitoring step must equal the plain call, and it did not, because R had flattened a one-column matrix. The ordinary tests had passed.\nA wrong sign can look plausible. My barrier correction moved the barrier the wrong way and gave 8.42, while the exact formula gave 7.587 and the corrected simulation matched it.\nReal data is messy, and parity checks help. They exposed a mismatch between the stock price and the price the options were quoted at.\nAssumptions drive the answer. The honest way to present a result like the guarantee’s cost is to show how much it moves with each input.\n\n\n  View on GitHub\n  Read the report"
   }
 ]
