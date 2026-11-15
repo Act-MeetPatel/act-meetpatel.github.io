@@ -15,15 +15,12 @@ website:
         text: Resume
       - href: contact.qmd
         text: Contact
-      - href: index.qmd
-        text: Home
-      - about.qmd
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: [cosmo, custom-light.scss]
+      dark: [darkly, custom-dark.scss]
     css: styles.css
     toc: true
 
