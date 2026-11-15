@@ -17,7 +17,7 @@ I'm an Honours student in Actuarial Science and Statistics at the University of 
         <p class="card-text">An end-to-end pricing and profit-testing model for Term, Whole Life and Deferred Whole Life products. It runs from synthetic experience data and a mortality study to a Shiny dashboard.</p>
       </div>
       <div class="card-footer bg-transparent border-0 pb-3">
-        <a href="projects.html" class="btn btn-primary">Read more</a>
+        <a href="projects/life-insurance-pricing.html" class="btn btn-primary">Read more</a>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ I'm an Honours student in Actuarial Science and Statistics at the University of 
         <p class="card-text">Prices put and call options in R with binomial trees, Black-Scholes and Monte Carlo, then applies them to a segregated fund maturity guarantee.</p>
       </div>
       <div class="card-footer bg-transparent border-0 pb-3">
-        <a href="projects.html" class="btn btn-primary">Read more</a>
+        <a href="projects/options-pricing-engine.html" class="btn btn-primary">Read more</a>
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@ I'm an Honours student in Actuarial Science and Statistics at the University of 
         <p class="card-text">A neural network built from scratch in R, then rebuilt in torch, to model mortality rates and compared against a Poisson GLM baseline.</p>
       </div>
       <div class="card-footer bg-transparent border-0 pb-3">
-        <a href="projects.html" class="btn btn-primary">Read more</a>
+        <a href="projects/mortality-neural-network.html" class="btn btn-primary">Read more</a>
       </div>
     </div>
   </div>

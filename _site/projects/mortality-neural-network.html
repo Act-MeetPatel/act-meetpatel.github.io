@@ -319,7 +319,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 data-anchor-id="overview">Overview</h2>
-<p>A Poisson GLM is a standard way to model mortality. This project asks a simple question: can a small neural network do better? I built the network from scratch in R, rebuilt it with torch, and compared it with a Poisson GLM and with the true mortality formula that generated the data.</p>
+<p>This project asks a simple question: can a small neural network do better? I built the network from scratch in R, rebuilt it with torch, and compared it with a Poisson GLM and with the true mortality formula that generated the data.</p>
 <p>The data is synthetic life insurance experience from my pricing project: 10,000 policies and 6,512 deaths, simulated from a Gompertz-Makeham law with a 2.5 times smoker multiplier. Because the true mortality is known, every model can be checked against it.</p>
 <p>The network has two inputs (age and a smoker flag), one hidden layer of 8 neurons and one output, 33 parameters in all. It is trained with a Poisson deviance loss, which measures how far predicted deaths are from actual deaths.</p>
 </section>

@@ -1,3 +1,38 @@
 ---
 title: "Projects"
+toc: false
 ---
+
+Three projects built from scratch in R. Each page covers the idea, the tools, the key results, the limitations and what I learned.
+
+```{=html}
+<div class="d-flex flex-column gap-4 mb-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Life Insurance Pricing Model</h5>
+      <p class="card-text">An end-to-end pricing and profit-testing model for Term, Whole Life and Deferred Whole Life products, built on synthetic experience data.</p>
+      <p class="card-text"><strong>Result:</strong> every achieved profit margin matched its target, and each product has a different dominant risk.</p>
+      <p class="card-text text-body-secondary"><small>R, SQL, Excel, Shiny</small></p>
+      <a href="projects/life-insurance-pricing.html" class="btn btn-primary">Read more</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Options Pricing Engine</h5>
+      <p class="card-text">Option pricing three independent ways, tested on real Tesla option data and applied to a segregated fund guarantee.</p>
+      <p class="card-text"><strong>Result:</strong> the tree, Black-Scholes and Monte Carlo agree, and a weekly delta hedge removed about 95% of the guarantee's risk.</p>
+      <p class="card-text text-body-secondary"><small>R, Shiny, Quarto</small></p>
+      <a href="projects/options-pricing-engine.html" class="btn btn-primary">Read more</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Mortality Neural Network</h5>
+      <p class="card-text">A neural network built from scratch in R, then rebuilt in torch, compared with a Poisson GLM and with the true mortality formula.</p>
+      <p class="card-text"><strong>Result:</strong> on the test set the network tied the GLM. It did not beat it.</p>
+      <p class="card-text text-body-secondary"><small>R, torch</small></p>
+      <a href="projects/mortality-neural-network.html" class="btn btn-primary">Read more</a>
+    </div>
+  </div>
+</div>
+```
