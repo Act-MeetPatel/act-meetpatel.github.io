@@ -47,5 +47,47 @@
     "title": "Meet Patel",
     "section": "Featured projects",
     "text": "Featured projects\n\n  \n    \n      \n        Life Insurance Pricing Model\n        An end-to-end pricing and profit-testing model for Term, Whole Life and Deferred Whole Life products. It runs from synthetic experience data and a mortality study to a Shiny dashboard.\n      \n      \n        Read more\n      \n    \n  \n  \n    \n      \n        Options Pricing Engine\n        Prices put and call options in R with binomial trees, Black-Scholes and Monte Carlo, then applies them to a segregated fund maturity guarantee.\n      \n      \n        Read more\n      \n    \n  \n  \n    \n      \n        Mortality Neural Network\n        A neural network built from scratch in R, then rebuilt in torch, to model mortality rates and compared against a Poisson GLM baseline.\n      \n      \n        Read more"
+  },
+  {
+    "objectID": "projects/life-insurance-pricing.html",
+    "href": "projects/life-insurance-pricing.html",
+    "title": "Life Insurance Pricing Model",
+    "section": "",
+    "text": "Life insurers must set a premium today for a promise that may not be paid for decades. This project prices life insurance the way an actuary would from experience data. It generates a portfolio of 10,000 synthetic policies, studies the mortality they produce, turns that study into pricing assumptions, solves for the premium, and then tests how profitable the product stays when reality differs from the assumptions.\nIt covers three products: Term, Whole Life and Deferred Whole Life (a waiting period, then lifetime coverage). The data is synthetic, so no real or personal information is used. Because the true mortality pattern is known in advance, the accuracy of the mortality study can be measured directly.\nThe work runs through nine phases: pricing fundamentals, database design, synthetic data, a mortality study, assumptions, a pricing engine, profit testing, sensitivity analysis and a Shiny dashboard."
+  },
+  {
+    "objectID": "projects/life-insurance-pricing.html#overview",
+    "href": "projects/life-insurance-pricing.html#overview",
+    "title": "Life Insurance Pricing Model",
+    "section": "",
+    "text": "Life insurers must set a premium today for a promise that may not be paid for decades. This project prices life insurance the way an actuary would from experience data. It generates a portfolio of 10,000 synthetic policies, studies the mortality they produce, turns that study into pricing assumptions, solves for the premium, and then tests how profitable the product stays when reality differs from the assumptions.\nIt covers three products: Term, Whole Life and Deferred Whole Life (a waiting period, then lifetime coverage). The data is synthetic, so no real or personal information is used. Because the true mortality pattern is known in advance, the accuracy of the mortality study can be measured directly.\nThe work runs through nine phases: pricing fundamentals, database design, synthetic data, a mortality study, assumptions, a pricing engine, profit testing, sensitivity analysis and a Shiny dashboard."
+  },
+  {
+    "objectID": "projects/life-insurance-pricing.html#tools-used",
+    "href": "projects/life-insurance-pricing.html#tools-used",
+    "title": "Life Insurance Pricing Model",
+    "section": "Tools used",
+    "text": "Tools used\n\nR for simulation, the pricing engine, profit testing and charts, with dplyr, ggplot2, DBI, RSQLite and readxl\nSQL (SQLite) for the policy, exposure and death tables\nExcel for the assumptions workbook, kept separate from the code so any assumption can be changed\nShiny for the pricing dashboard\nGit and GitHub for version control"
+  },
+  {
+    "objectID": "projects/life-insurance-pricing.html#key-results",
+    "href": "projects/life-insurance-pricing.html#key-results",
+    "title": "Life Insurance Pricing Model",
+    "section": "Key results",
+    "text": "Key results\n\nThe mortality study recovered the true pattern\nDeaths divided by exposure, by 5-year age band and smoker status, tracks the mortality curve the data was generated from across ages 40 to 95. At age 65 the Nonsmoker rate is 0.696% observed against 0.700% true, and at age 80 the Smoker rate is 9.33% against 9.40%. The smoker-to-nonsmoker ratio stays close to the 2.5 times built into the simulation. At the youngest and oldest ages, exposure is thin and the observed rates become unreliable, which is a known feature of experience studies.\n\n\n\nObserved versus true annual mortality rates by age band and smoker status\n\n\n\n\nProfit margins match their targets\nProfit testing projects cash flows year by year and checks them against the pricing engine’s premium. Across six test policies, every achieved margin matched its product’s target: 8% for Term, 15% for Whole Life and 12% for Deferred Whole Life. An early version did not reconcile, giving $9.34 against a target of $17.20. The cause was a timing mismatch, and discounting each cash flow with its own timing fixed it.\n\n\nEach product has a different dominant risk\nSensitivity analysis prices each product once and then stresses the assumptions: mortality ±10%, interest rate ±1 percentage point and expenses ±10%. The table shows each product’s profit margin under the adverse direction of each stress.\n\n\n\n\n\n\n\n\n\n\nProduct\nBase margin\nMortality +10%\nInterest rate −1 point\nExpenses +10%\n\n\n\n\nTerm\n8.00%\n0.31%\n5.13%\n6.51%\n\n\nWhole Life\n15.00%\n10.75%\n2.58%\n14.90%\n\n\nDeferred Whole Life\n12.00%\n7.97%\n−7.45%\n11.81%\n\n\n\nTerm is most exposed to mortality: a 10% rise takes its margin from 8.00% to 0.31%. Whole Life and Deferred Whole Life are most exposed to interest rates, because their cash flows run for decades, and a 1 point fall takes Deferred Whole Life below zero. Expenses matter least for every product. The charts below show the full range for each product.\n\nTermWhole LifeDeferred Whole Life\n\n\n\n\n\nSensitivity of Term profit margin to mortality, interest rate and expenses\n\n\n\n\n\n\n\nSensitivity of Whole Life profit margin to mortality, interest rate and expenses\n\n\n\n\n\n\n\nSensitivity of Deferred Whole Life profit margin to mortality, interest rate and expenses"
+  },
+  {
+    "objectID": "projects/life-insurance-pricing.html#limitations-and-assumptions",
+    "href": "projects/life-insurance-pricing.html#limitations-and-assumptions",
+    "title": "Life Insurance Pricing Model",
+    "section": "Limitations and assumptions",
+    "text": "Limitations and assumptions\n\nThe data is synthetic, so the results show that the method works, not how a real insurer’s mortality behaves.\nThe “true” mortality pattern is a Gompertz-Makeham curve with parameters from course material. That is an assumption of the model.\nCash flows use expected values rather than a simulation of individual policies, and premiums are level.\nExposure is thin at the oldest ages (95 and above), so observed rates there are volatile. Ages are grouped into 5-year bands.\nSensitivity was run on one representative policy per product, with single shocks (mortality ±10%, interest rate ±1 point, expenses ±10%), not combined stresses.\nThe dashboard prices at a fixed 5% interest rate and runs locally in RStudio. It is not hosted online."
+  },
+  {
+    "objectID": "projects/life-insurance-pricing.html#what-i-learned",
+    "href": "projects/life-insurance-pricing.html#what-i-learned",
+    "title": "Life Insurance Pricing Model",
+    "section": "What I learned",
+    "text": "What I learned\n\nA model can run without errors and still be wrong. Reconciling two independent calculations, the premium solve and the cash flow projection, caught a discounting mistake that neither would have shown alone.\nPrice once, test many times. Re-solving the premium under each stress answers the wrong question, because sensitivity testing should hold the premium fixed.\nStress tests need checking too. My first mortality stress changed nothing, because the stressed table never reached the calculations. Checking each function in the chain in turn found the gap.\nA Shiny interface can sit on top of a verified engine without changing its logic.\n\nView on GitHub"
   }
 ]
