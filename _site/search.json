@@ -4,13 +4,48 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "I’m an Honours student in Actuarial Science and Statistics at the University of Manitoba. I’m drawn to the part of actuarial work where a question about risk becomes a model you can test, so I build projects end to end: data, assumptions, code and a clear write-up.\nMy three featured projects cover life insurance pricing, options pricing and a neural network for mortality rates."
+  },
+  {
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About",
+    "section": "",
+    "text": "I’m an Honours student in Actuarial Science and Statistics at the University of Manitoba. I’m drawn to the part of actuarial work where a question about risk becomes a model you can test, so I build projects end to end: data, assumptions, code and a clear write-up.\nMy three featured projects cover life insurance pricing, options pricing and a neural network for mortality rates."
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "About",
+    "section": "Skills",
+    "text": "Skills\n\nR, including torch for neural networks and Shiny for dashboards\nSQL, using SQLite\nExcel\nGit and GitHub for version control and sharing projects"
+  },
+  {
+    "objectID": "about.html#what-im-looking-for",
+    "href": "about.html#what-im-looking-for",
+    "title": "About",
+    "section": "What I’m looking for",
+    "text": "What I’m looking for\nI’m looking for an Actuarial Analyst role where I can keep learning, work with real data and assumptions, and explain results clearly."
+  },
+  {
+    "objectID": "about.html#outside-of-work",
+    "href": "about.html#outside-of-work",
+    "title": "About",
+    "section": "Outside of work",
+    "text": "Outside of work\nI play soccer, and I’m always building a project or learning something new. Poker is a game I find interesting, since it mixes probability with decisions under uncertainty. Golf is my newest hobby, and I’m still learning it."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "act-meetpatel.github.io",
+    "title": "Meet Patel",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I’m an Honours student in Actuarial Science and Statistics at the University of Manitoba. I like turning pricing, risk and modelling questions into working R code, and the three projects below show how. I’m open to Actuarial Analyst roles, so take a look around."
+  },
+  {
+    "objectID": "index.html#featured-projects",
+    "href": "index.html#featured-projects",
+    "title": "Meet Patel",
+    "section": "Featured projects",
+    "text": "Featured projects\n\n  \n    \n      \n        Life Insurance Pricing Model\n        An end-to-end pricing and profit-testing model for Term, Whole Life and Deferred Whole Life products. It runs from synthetic experience data and a mortality study to a Shiny dashboard.\n      \n      \n        Read more\n      \n    \n  \n  \n    \n      \n        Options Pricing Engine\n        Prices put and call options in R with binomial trees, Black-Scholes and Monte Carlo, then applies them to a segregated fund maturity guarantee.\n      \n      \n        Read more\n      \n    \n  \n  \n    \n      \n        Mortality Neural Network\n        A neural network built from scratch in R, then rebuilt in torch, to model mortality rates and compared against a Poisson GLM baseline.\n      \n      \n        Read more"
   }
 ]

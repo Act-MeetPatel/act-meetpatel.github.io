@@ -1,9 +1,25 @@
 ---
 title: "About"
+toc: false
 ---
 
-About this site
+## Background
 
-```{r}
-1 + 1
-```
+I'm an Honours student in Actuarial Science and Statistics at the University of Manitoba. I'm drawn to the part of actuarial work where a question about risk becomes a model you can test, so I build projects end to end: data, assumptions, code and a clear write-up.
+
+My three featured projects cover life insurance pricing, options pricing and a neural network for mortality rates.
+
+## Skills
+
+- **R**, including torch for neural networks and Shiny for dashboards
+- **SQL**, using SQLite
+- **Excel**
+- **Git and GitHub** for version control and sharing projects
+
+## What I'm looking for
+
+I'm looking for an Actuarial Analyst role where I can keep learning, work with real data and assumptions, and explain results clearly.
+
+## Outside of work
+
+I play soccer, and I'm always building a project or learning something new. Poker is a game I find interesting, since it mixes probability with decisions under uncertainty. Golf is my newest hobby, and I'm still learning it.

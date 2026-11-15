@@ -23,6 +23,4 @@ format:
       dark: [darkly, custom-dark.scss]
     css: styles.css
     toc: true
-
-editor: visual
-
+    anchor-sections: false

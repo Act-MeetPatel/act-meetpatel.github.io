@@ -9,9 +9,26 @@
   border-bottom-color: #A97BFF;
 }
 
+/* Project cards: soft corners, lift and purple border on hover */
+.card {
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  border-color: var(--accent, #7B2FF7);
+}
+
 /* Respect people who turn off animations in their settings */
 @media (prefers-reduced-motion: reduce) {
-  .navbar-nav .nav-link {
+  .navbar-nav .nav-link,
+  .card {
     transition: none;
+  }
+
+  .card:hover {
+    transform: none;
   }
 }

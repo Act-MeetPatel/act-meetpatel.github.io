@@ -12,3 +12,30 @@ $navbar-bg: #1F4D3A;
 $navbar-fg: #F3EBDD;
 $navbar-hl: #FFFFFF;
 $card-bg: #FBF7EE;
+
+/*-- scss:rules --*/
+#title-block-header .subtitle::after,
+#quarto-document-content h2::after,
+#quarto-document-content h3::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  margin-top: 0.75rem;
+  border-radius: 2px;
+  background-color: #7B2FF7;
+}
+
+#quarto-document-content h3::after {
+  width: 2rem;
+  height: 3px;
+  margin-top: 0.5rem;
+}
+
+#quarto-document-content h2 {
+  border-bottom: none;
+}
+
+:root {
+  --accent: #7B2FF7;
+}
